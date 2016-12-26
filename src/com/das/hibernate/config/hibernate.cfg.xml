@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- <property name="hibernate.connection_url">jdbc:mysql://localhost:3306/Mydb</property> -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Lopa?useSSL=false</property>
+		<property name="hibernate.connection.username">bhabani</property>
+		<property name="hibernate.connection.password">bhabani</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- Names the annotated entity class -->
+		<mapping class="com.das.users.ContactDetail" />
+		<mapping class="com.das.transactions.Discount" />
+		<mapping class="com.das.transactions.ProdCategory" />
+		<mapping class="com.das.users.User" />
+		<mapping class="com.das.users.Address" />
+		<mapping class="com.das.sales.order.Payment" />
+		<mapping class="com.das.sales.order.Orders" />
+		<mapping class="com.das.users.Customer" />
+		<mapping class="com.das.Product" />
+		<mapping class="com.das.users.Supplier"/>
+		<mapping class="com.das.sales.order.OrderDetail" />
+		<mapping class="com.das.Brand"/>
+	</session-factory>
+</hibernate-configuration>
